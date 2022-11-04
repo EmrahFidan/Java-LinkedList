@@ -194,6 +194,7 @@ public class studentRegisterSystem {
 
     public static void main(String[] args) {
 
+        List students = new List();
 
 
     }
