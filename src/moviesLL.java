@@ -240,6 +240,11 @@ public static void mainMenu(MyLinkedList movies) {
 }
 
 public static void main(String[] args) {
+	
+		// I have created a new list
+		MyLinkedList movies = new MyLinkedList(); 
+		
+		mainMenu(movies);
 
 	}
 
