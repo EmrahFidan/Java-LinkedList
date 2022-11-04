@@ -196,6 +196,40 @@ public class studentRegisterSystem {
 
         List students = new List();
 
+        Scanner scan = new Scanner(System.in);
+		
+		int choice = -1;
+		
+		while(choice != 0) {
+			
+			System.out.println("Bilgisayar bolumu ogrenci kayit uygulamasi");
+			System.out.println("------------------------------------");
+			System.out.println("1- add student");
+			System.out.println("2- delete student");
+			System.out.println("3- print students");
+			System.out.println("4- The most successful student info");
+			System.out.println("0- Exit");
+			System.out.println("\n");
+			
+			System.out.print("Your choices : ");
+			choice = scan.nextInt();
+			
+			if(choice == 1)
+				students.add();
+			else if(choice == 2)
+				students.delete();
+			else if(choice == 3)
+				students.print();
+			else if(choice == 4)
+				students.theMostSuccessful();
+			else if(choice == 0)
+				System.out.println("Program Terminating...");
+			else {
+				System.out.println("Invalid choice [0-4]");
+				System.out.println();
+			}
+			
+		}
 
     }
 
