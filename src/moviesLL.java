@@ -41,6 +41,7 @@ public class moviesLL {
 		
 		Scanner scan = new Scanner(System.in);
 
+		// add elements to the list
 		void add() {
 
 			Scanner scan = new Scanner(System.in);
@@ -128,7 +129,49 @@ public class moviesLL {
 	        }
 	}
 
-				
+		// remove elements to the list
+		void delete() {
+			// if the list is empty
+			if (head == null) {
+				System.out.println("empty list, added  please !!!");
+			} else {
+				System.out.println("Movie Name for delete: ");
+				movieName = scan.nextLine();
+				// if there is a movie on the list and we want to delete it
+				if (movieName.equalsIgnoreCase(head.movieName)&& head.next == null) {
+					
+					head = null;
+					tail = null;
+					System.out.println("movies list is empty !!!");
+
+				} 
+				// there are more than one movie in the list but I want to delete the first element
+				else if (movieName.equalsIgnoreCase(head.movieName) && head.next != null) {
+					
+					head = head.next;
+					System.out.println("movie named" + movieName + "has been deleted");
+				} 
+				else {
+					// elimination
+					temp = head;
+					temp2 = head;
+					while (temp.next != null) {
+						if (movieName.equalsIgnoreCase(temp.movieName)) {
+							temp2.next = temp.next; 
+							System.out.println("movie named" + movieName + "has been deleted");
+						}
+						temp2 = temp;
+						temp = temp.next;
+					}
+					// removing the last element
+					if (movieName.equalsIgnoreCase(temp.movieName)) {
+						temp2.next = null; 
+						tail = temp2;
+						System.out.println("movie named" + movieName + "has been deleted");
+					}
+				}
+			}
+		}		
 
 }
 	public static void main(String[] args) {
