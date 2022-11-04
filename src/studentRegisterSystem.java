@@ -196,7 +196,7 @@ public class studentRegisterSystem {
 
         List students = new List();
 
-        Scanner scan = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 		
 		int choice = -1;
 		
@@ -212,7 +212,7 @@ public class studentRegisterSystem {
 			System.out.println("\n");
 			
 			System.out.print("Your choices : ");
-			choice = scan.nextInt();
+			choice = scanner.nextInt();
 			
 			if(choice == 1)
 				students.add();
