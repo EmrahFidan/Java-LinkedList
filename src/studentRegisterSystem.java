@@ -41,7 +41,7 @@ public class studentRegisterSystem {
 
             Node head = null;
             Node tail = null;
-            // geçiçi Nodes for aim
+            // temporary Nodes for aim
             Node temp = null;
             Node temp2 = null;
     
@@ -55,8 +55,42 @@ public class studentRegisterSystem {
     
             Scanner scan = new Scanner(System.in); // ctrl + shift + o
 
-            
+            void add() {
 
+                System.out.println("\nPlease enter infos of student: ");
+    
+                System.out.print("No: ");
+                no = scan.nextInt();
+                scan.nextLine();
+    
+                System.out.print("Name: ");
+                name = scan.nextLine();
+    
+                System.out.print("Surname: ");
+                surname = scan.nextLine();
+    
+                System.out.print("Visa: ");
+                visa = scan.nextInt();
+    
+                System.out.print("Finale: ");
+                finale = scan.nextInt();
+    
+                Node pointer = new Node(no, name, surname, visa, finale);
+    
+                if (head == null) {
+                    head = pointer;
+                    tail = pointer;
+                    System.out.println("Added first student");
+                } else {
+                    pointer.next = head;
+                    head = pointer;
+                    System.out.println("The student is registered");
+                    System.out.println();
+                }
+    
+            }
+
+            
 
         }
 
