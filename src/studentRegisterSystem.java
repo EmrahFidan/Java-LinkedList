@@ -200,19 +200,19 @@ public class studentRegisterSystem {
 		
 		while(choice != 0) {
 
-            try (Scanner scan = new Scanner(System.in)) {
-                System.out.println("Computer section student registration application");
-                System.out.println("------------------------------------");
-                System.out.println("1- add student");
-                System.out.println("2- delete student");
-                System.out.println("3- print students");
-                System.out.println("4- The most successful student info");
-                System.out.println("0- Exit");
-                System.out.println("\n");
-                
-                System.out.print("Your choices : ");
-                choice = scan.nextInt();
-            }
+            Scanner scanner2 = new Scanner(System.in);
+			
+			System.out.println("Computer section student registration application");
+			System.out.println("------------------------------------");
+			System.out.println("1- add student");
+			System.out.println("2- delete student");
+			System.out.println("3- print students");
+			System.out.println("4- The most successful student info");
+			System.out.println("0- Exit");
+			System.out.println("\n");
+			
+			System.out.print("Your choices : ");
+			choice = scanner2.nextInt();
 			
 			if(choice == 1)
 				students.add();
