@@ -83,9 +83,52 @@ public class moviesLL {
 				
 			}
 
+			// adding in alphabetical order
+			
+			Node current = head,
+			temp2 = null;
+			 
+	        String name;
+	        String directory;
+	        String category;
+	        double ımdb;
+	 
+	        if (head == null) {
+	            return;
+	        }
+	        else {
+	            while (current != null) {
+	                
+	                temp2 = current.next;
+	                int compare = current.movieName.compareTo(movieName);
+	                
+	                while (temp2 != null) {
+	                    // the location of each entered value must be changed
+	                    if (compare > 0) {
+	                        name = current.movieName;
+	                        directory = current.movieDirectory;
+	                        category = current.movieCategory;
+	                        ımdb = current.movieIMDBrate;
+	                        
+	                        current.movieName = temp2.movieName;
+	                        current.movieDirectory = temp2.movieDirectory;
+	                        current.movieCategory = temp2.movieCategory;
+	                        current.movieIMDBrate = temp2.movieIMDBrate;
+	                        
+	                        temp2.movieName = name;
+	                        temp2.movieDirectory = directory;
+	                        temp2.movieCategory = category;
+	                        temp2.movieIMDBrate = ımdb;
+	                    }
+	 
+	                    temp2 = temp2.next;
+	                }
+	                current = current.next;
+	            }
+	        }
 	}
 
-	
+				
 
 }
 	public static void main(String[] args) {
