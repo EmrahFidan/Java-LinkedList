@@ -202,7 +202,7 @@ public class studentRegisterSystem {
 		
 		while(choice != 0) {
 			
-			System.out.println("Bilgisayar bolumu ogrenci kayit uygulamasi");
+			System.out.println("Computer section student registration application");
 			System.out.println("------------------------------------");
 			System.out.println("1- add student");
 			System.out.println("2- delete student");
