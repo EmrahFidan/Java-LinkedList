@@ -90,7 +90,46 @@ public class studentRegisterSystem {
     
             }
 
-            
+            void delete() {
+
+
+                if (head == null) {
+                    System.out.println("empty list, added student please !!!");
+                } else {
+                    System.out.print("Movie Name for delete: ");
+                    no = scan.nextInt();
+                
+    
+                    if (no == head.no && head.next == null) {
+                        // there is student one student on the list
+                        head = null;
+                        tail = null;
+                        System.out.println("students list is empty !!!");
+                    } else if (no == head.no && head.next != null) {
+                        // there are student more than 1 on the list but I want to delete first element
+                        head = head.next;
+                        System.out.println("student named" + no + "has been deleted");
+    
+                    } else {
+    
+                        temp = head;
+                        temp2 = head;
+                        while (temp.next != null) {
+                            if (no == temp.no) {
+                                temp2.next = temp.next; // delete
+                                System.out.println(no + "has been deleted");
+                            }
+                            temp2 = temp;
+                            temp = temp.next;
+                        }
+                        if (no == temp.no) {
+                            temp2.next = null; // because last Node
+                            tail = temp2;
+                            System.out.println(no + "has been deleted");
+                        }
+                    }
+                }
+            }
 
         }
 
