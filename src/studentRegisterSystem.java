@@ -156,6 +156,40 @@ public class studentRegisterSystem {
                 }
             }
 
+            void theMostSuccessful() {
+			
+				if(head == null) {
+					System.out.println("Liste boş");
+				}
+				else {
+					temp = head;
+					double buyuk = temp.grade;
+					Node best = null;  
+					while(temp!=null) {		
+						if(buyuk<=temp.grade) {	
+							buyuk = temp.grade;
+							no = temp.no;
+							name = temp.name;
+							surname = temp.surname;
+							visa = temp.visa;
+							finale = temp.finale;
+						}
+						temp = temp.next;
+					}
+					best = new Node(no, name,surname, visa, finale); 
+					System.out.println("******************************");
+					System.out.println("The most succesful student information");
+					System.out.println("No: " + best.no);
+					System.out.println("Name: " + best.name);
+					System.out.println("surname: " + best.surname);
+					System.out.println("visa: " + best.visa);
+					System.out.println("final: " + best.finale);
+					System.out.println("grade: " + best.grade);
+					System.out.println("State: " + best.state);
+					System.out.println("******************************");
+				}
+			}
+
         }
 
     public static void main(String[] args) {
