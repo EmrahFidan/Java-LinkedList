@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class moviesLL {
 
@@ -24,7 +25,25 @@ public class moviesLL {
 		}
 	}
 
+	// I created my Linked list
+	static class MyLinkedList {
+
+		Node head = null;
+		Node tail = null;
+		// temporary node
+		Node temp = null;
+		Node temp2 = null;
+
+		String movieName;
+		String movieDirectory;
+		String movieCategory;
+		double movieIMDBrate;
 		
+		Scanner scan = new Scanner(System.in);
+
+		
+
+	}
 	public static void main(String[] args) {
 
 	}
