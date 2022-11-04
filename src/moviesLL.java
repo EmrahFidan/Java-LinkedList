@@ -173,6 +173,30 @@ public class moviesLL {
 			}
 		}		
 
+		// print all movies
+		void print() {
+			
+			if(head == null) {
+				System.out.println("movies list empty !!!");
+			}
+			else {
+				temp = head;
+				int movieID = 0;
+				while(temp != null) {
+					
+					movieID++;
+					System.out.println("--------------------------------");
+					System.out.println("MoiveID: "+movieID);
+					System.out.println("MoiveName: "+temp.movieName);
+					System.out.println("MoiveDirectory: "+temp.movieDirectory);
+					System.out.println("MoiveCategory: "+temp.movieCategory );
+					System.out.println("MoiveIMDBrate: "+temp.movieIMDBrate);
+					
+					temp = temp.next;
+				}
+			}	
+		}
+
 }
 	public static void main(String[] args) {
 
