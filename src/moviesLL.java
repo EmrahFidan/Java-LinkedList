@@ -198,7 +198,48 @@ public class moviesLL {
 		}
 
 }
-	public static void main(String[] args) {
+	
+// User interface 
+public static void mainMenu(MyLinkedList movies) {
+		
+	Scanner scan = new Scanner(System.in);
+	System.out.println("\nMain Menu\n1: Add New Movie\n2: Remove Movie\n3: Print all movies\n0: exit\n");
+	System.out.print("enter a choice: ");
+	
+	int choice = scan.nextInt();
+	if(choice == 1) {
+		System.out.println();
+		movies.add();
+		mainMenu(movies);
+	}
+	else if(choice == 2) {
+		System.out.println();
+		movies.delete();
+		mainMenu(movies);
+	}
+	else if(choice == 3) {
+		System.out.println();
+		movies.print();
+		mainMenu(movies);
+		
+	}
+	else if(choice == 0) {
+		System.out.println();
+		System.out.println("Program terminating...");
+		return;
+	}
+	
+	else {
+		System.out.println();
+		System.out.println("Invalid choice [0-3]");
+		System.out.println();
+		mainMenu(movies);
+	}
+	
+	
+}
+
+public static void main(String[] args) {
 
 	}
 
