@@ -39,24 +39,22 @@ public class moviesLL {
 		String movieCategory;
 		double movieIMDBrate;
 		
-		Scanner scan = new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in);
 
 		// add elements to the list
 		void add() {
-
-			Scanner scan = new Scanner(System.in);
 			
 			System.out.print("MovieName: ");
-			String movieName = scan.nextLine();
+			String movieName = scanner.nextLine();
 			
 			System.out.print("MovieDirectory: ");
-			String movieDirectory = scan.nextLine();
+			String movieDirectory = scanner.nextLine();
 			
 			System.out.print("MovieCategory: ");
-			String movieCategory = scan.nextLine();
+			String movieCategory = scanner.nextLine();
 			
 			System.out.print("MovieIMDBrate: ");
-			double movieIMDBrate = scan.nextDouble();
+			double movieIMDBrate = scanner.nextDouble();
 			
 			
 			Node newNode = new Node(movieName, movieDirectory, movieCategory, movieIMDBrate);
@@ -136,7 +134,7 @@ public class moviesLL {
 				System.out.println("empty list, added  please !!!");
 			} else {
 				System.out.println("Movie Name for delete: ");
-				movieName = scan.nextLine();
+				movieName = scanner.nextLine();
 				// if there is a movie on the list and we want to delete it
 				if (movieName.equalsIgnoreCase(head.movieName)&& head.next == null) {
 					
@@ -202,38 +200,39 @@ public class moviesLL {
 // User interface 
 public static void mainMenu(MyLinkedList movies) {
 		
-	Scanner scan = new Scanner(System.in);
-	System.out.println("\nMain Menu\n1: Add New Movie\n2: Remove Movie\n3: Print all movies\n0: exit\n");
-	System.out.print("enter a choice: ");
-	
-	int choice = scan.nextInt();
-	if(choice == 1) {
-		System.out.println();
-		movies.add();
-		mainMenu(movies);
-	}
-	else if(choice == 2) {
-		System.out.println();
-		movies.delete();
-		mainMenu(movies);
-	}
-	else if(choice == 3) {
-		System.out.println();
-		movies.print();
-		mainMenu(movies);
+	try (Scanner value = new Scanner(System.in)) {
+		System.out.println("\nMain Menu\n1: Add New Movie\n2: Remove Movie\n3: Print all movies\n0: exit\n");
+		System.out.print("enter a choice: ");
+		int choice = value.nextInt();
+
+		if(choice == 1) {
+			System.out.println();
+			movies.add();
+			mainMenu(movies);
+		}
+		else if(choice == 2) {
+			System.out.println();
+			movies.delete();
+			mainMenu(movies);
+		}
+		else if(choice == 3) {
+			System.out.println();
+			movies.print();
+			mainMenu(movies);
+			
+		}
+		else if(choice == 0) {
+			System.out.println();
+			System.out.println("Program terminating...");
+			return;
+		}
 		
-	}
-	else if(choice == 0) {
-		System.out.println();
-		System.out.println("Program terminating...");
-		return;
-	}
-	
-	else {
-		System.out.println();
-		System.out.println("Invalid choice [0-3]");
-		System.out.println();
-		mainMenu(movies);
+		else {
+			System.out.println();
+			System.out.println("Invalid choice [0-3]");
+			System.out.println();
+			mainMenu(movies);
+		}
 	}
 	
 	
