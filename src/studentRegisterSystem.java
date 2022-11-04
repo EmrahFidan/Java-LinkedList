@@ -131,6 +131,31 @@ public class studentRegisterSystem {
                 }
             }
 
+            void print() {
+			
+                if(head == null) {
+                    System.out.println("students list empty !!!");
+                }
+                else {
+                    temp = head;
+                    while(temp != null) {
+                        
+                        System.out.println(" Student information number"+temp.no);
+                        System.out.println("---------------------------");
+                        
+                        System.out.println("Name: 	 "+temp.name);
+                        System.out.println("SurName: "+temp.surname);
+                        System.out.println("Visa:    "+temp.visa);
+                        System.out.println("Final:   "+temp.finale);
+                        System.out.println("Grade:   "+temp.grade);
+                        System.out.println("State:   "+temp.state);
+                        
+                        
+                        temp = temp.next;
+                    }
+                }
+            }
+
         }
 
     public static void main(String[] args) {
