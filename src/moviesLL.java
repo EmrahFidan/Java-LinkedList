@@ -41,9 +41,53 @@ public class moviesLL {
 		
 		Scanner scan = new Scanner(System.in);
 
-		
+		void add() {
+
+			Scanner scan = new Scanner(System.in);
+			
+			System.out.print("MovieName: ");
+			String movieName = scan.nextLine();
+			
+			System.out.print("MovieDirectory: ");
+			String movieDirectory = scan.nextLine();
+			
+			System.out.print("MovieCategory: ");
+			String movieCategory = scan.nextLine();
+			
+			System.out.print("MovieIMDBrate: ");
+			double movieIMDBrate = scan.nextDouble();
+			
+			
+			Node newNode = new Node(movieName, movieDirectory, movieCategory, movieIMDBrate);
+
+			// if the list is empty 
+			if (head == null) {
+				head = newNode;
+				tail = newNode;
+				System.out.println();
+				System.out.println("First movie is added");
+			} 
+			
+			else {
+				// control
+				if(movieName.equalsIgnoreCase(head.movieName)) {
+					System.out.println("Bu film zaten kayitli...");
+					head = head.next;
+					return;
+				}
+				// add it as the last element
+				else {
+			            tail.next = newNode;
+			            tail = newNode;
+				}
+				
+			}
 
 	}
+
+	
+
+}
 	public static void main(String[] args) {
 
 	}
